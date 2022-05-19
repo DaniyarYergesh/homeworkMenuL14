@@ -14,7 +14,6 @@ import kotlin.random.Random
 
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
-
     private var chosenIndex = -1
     private var adapter: Adapter? = null
     private var layoutManager: LinearLayoutManager? = null
@@ -60,10 +59,10 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
         adapter?.setItems(currencyList)
 
-        var itemTouchHelper = ItemTouchHelper(SwipeToDelete(adapter!!))
+        val itemTouchHelper = ItemTouchHelper(SwipeToDelete(adapter!!))
         itemTouchHelper.attachToRecyclerView(myRecyclerView)
 
-        var itemTouchHelper1 = ItemTouchHelper(DragDropMove(adapter!!))
+        val itemTouchHelper1 = ItemTouchHelper(DragDropMove(adapter!!))
         itemTouchHelper1.attachToRecyclerView(myRecyclerView)
 
     }
@@ -104,7 +103,6 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
             else -> return super.onOptionsItemSelected(item)
         }
     }
-
 
 
     fun scrollBottom(n: Int){
